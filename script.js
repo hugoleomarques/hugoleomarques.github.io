@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Isso simulatia o cadastro! Em um app real, os dados seriam salvos.');
+            alert('Isso simularia o cadastro! Em um app real, os dados seriam salvos.');
             closeModal(document.getElementById('modal-login'));
         });
     }
