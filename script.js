@@ -1,16 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Modal Helpers
-    const openModal = (modalId) => {
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+
+    let lastFocusedElement = null;
+
+    const openModal = (modalId, trigger) => {
         const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent body scroll
-        }
+        if (!modal) return;
+        lastFocusedElement = trigger || document.activeElement;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        const focusTarget = modal.querySelector('input, textarea, button');
+        if (focusTarget) focusTarget.focus();
     };
 
     const closeModal = (modal) => {
+        if (!modal || !modal.classList.contains('active')) return;
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
     };
 
     // Close buttons/Overlays
@@ -23,18 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Close active modal on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.modal-overlay.active');
+            if (activeModal) closeModal(activeModal);
+        }
+    });
+
     // Buttons Actions
     const btnContact = document.getElementById('btn-contact');
     if (btnContact) {
-        btnContact.addEventListener('click', () => openModal('modal-contact'));
+        btnContact.addEventListener('click', () => openModal('modal-contact', btnContact));
     }
 
-    const btnLogin = document.getElementById('btn-login');
-    if (btnLogin) {
-        btnLogin.addEventListener('click', () => openModal('modal-login'));
-    }
-
-    // Forms Simulation
+    // Contact Form Simulation
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -59,18 +72,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         });
     }
-
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Isso simulatia o cadastro! Em um app real, os dados seriam salvos.');
-            closeModal(document.getElementById('modal-login'));
-        });
-    }
-
-    // Google Button Simulation
-    document.querySelector('.google-btn').addEventListener('click', () => {
-        alert('Aqui abriria a janela de autenticação do Google.');
-    });
 });

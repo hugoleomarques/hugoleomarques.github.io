@@ -135,11 +135,6 @@ body {
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
 }
 
-.avatar-placeholder {
-    /* Mantendo como fallback se necessário, mas estilizando img principalmente */
-    display: none;
-}
-
 .card-header h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -252,6 +247,61 @@ body {
     color: #9146FF;
 }
 
+/* Portfolio */
+.portfolio-section {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-thumb {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-info h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.project-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
 /* Buttons */
 .action-buttons {
     display: flex;
@@ -349,24 +399,23 @@ body {
     position: absolute;
     top: 15px;
     right: 20px;
+    background: none;
+    border: none;
     font-size: 1.5rem;
+    line-height: 1;
     cursor: pointer;
     color: var(--text-muted);
+    padding: 4px;
 }
 
-.close-modal:hover {
+.close-modal:hover,
+.close-modal:focus-visible {
     color: white;
 }
 
 .modal-content h2 {
     margin-bottom: 1.5rem;
     text-align: center;
-}
-
-.modal-subtitle {
-    text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
 }
 
 /* Forms */
@@ -409,53 +458,6 @@ input:focus,
 textarea:focus {
     border-color: var(--primary-color);
     background: rgba(255, 255, 255, 0.08);
-}
-
-/* Google Button */
-.google-btn {
-    width: 100%;
-    background: white;
-    color: #333;
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-bottom: 1.5rem;
-    transition: 0.2s;
-}
-
-.google-btn:hover {
-    background: #f0f0f0;
-}
-
-.google-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--glass-border);
-}
-
-.divider span {
-    margin: 0 10px;
 }
 
 /* Animations */

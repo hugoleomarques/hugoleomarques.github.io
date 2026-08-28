@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cartão digital de Hugo Leonardo Marques Silva, Designer UI/UX & Desenvolvedor. Links de contato, redes sociais e projetos.">
     <title>Hugo | Cartão Digital</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%236366f1'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='sans-serif'%3EH%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -56,25 +58,51 @@
                             class="fab fa-twitch"></i> <span>Twitch</span></a>
                 </div>
 
+                <div class="portfolio-section">
+                    <h2 class="section-title">Projetos</h2>
+                    <div class="portfolio-grid">
+                        <!-- Substitua título, descrição, link e imagem por cada projeto real -->
+                        <a href="#" target="_blank" class="project-card">
+                            <div class="project-thumb" style="background-image: url('https://placehold.co/400x240/6366f1/ffffff?text=Projeto+1');"></div>
+                            <div class="project-info">
+                                <h3>Nome do Projeto 1</h3>
+                                <p>Breve descrição do que foi feito e as tecnologias usadas.</p>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="project-card">
+                            <div class="project-thumb" style="background-image: url('https://placehold.co/400x240/ec4899/ffffff?text=Projeto+2');"></div>
+                            <div class="project-info">
+                                <h3>Nome do Projeto 2</h3>
+                                <p>Breve descrição do que foi feito e as tecnologias usadas.</p>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="project-card">
+                            <div class="project-thumb" style="background-image: url('https://placehold.co/400x240/34d399/0b0b0b?text=Projeto+3');"></div>
+                            <div class="project-info">
+                                <h3>Nome do Projeto 3</h3>
+                                <p>Breve descrição do que foi feito e as tecnologias usadas.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="action-buttons">
                     <button id="btn-contact" class="primary-btn full-width"><i class="far fa-envelope"></i> Enviar
                         Mensagem</button>
-                    <button id="btn-login" class="secondary-btn full-width"><i class="far fa-user"></i> Área do Cliente
-                        / Cadastro</button>
                 </div>
             </div>
 
             <footer class="card-footer">
-                <p>© 2025 Hugo Leonardo Marques Silva. Todos os direitos reservados.</p>
+                <p>© <span id="current-year"></span> Hugo Leonardo Marques Silva. Todos os direitos reservados.</p>
             </footer>
         </div>
     </main>
 
     <!-- Modal Contact -->
-    <div id="modal-contact" class="modal-overlay">
+    <div id="modal-contact" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title">
         <div class="modal-content glass-panel">
-            <span class="close-modal">&times;</span>
-            <h2>Enviar Mensagem</h2>
+            <button type="button" class="close-modal" aria-label="Fechar">&times;</button>
+            <h2 id="modal-contact-title">Enviar Mensagem</h2>
             <form id="contact-form">
                 <div class="input-group">
                     <i class="far fa-user input-icon"></i>
@@ -88,40 +116,6 @@
                     <textarea placeholder="Sua mensagem..." rows="4" required></textarea>
                 </div>
                 <button type="submit" class="primary-btn">Enviar Agora</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal Login (Google Style) -->
-    <div id="modal-login" class="modal-overlay">
-        <div class="modal-content glass-panel login-modal">
-            <span class="close-modal">&times;</span>
-            <h2>Bem-vindo</h2>
-            <p class="modal-subtitle">Cadastre-se para acessar conteúdos exclusivos.</p>
-
-            <button class="google-btn">
-                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="google-icon">
-                <span>Continuar com Google</span>
-            </button>
-
-            <div class="divider">
-                <span>ou</span>
-            </div>
-
-            <form id="login-form">
-                <div class="input-group">
-                    <i class="far fa-user input-icon"></i>
-                    <input type="text" placeholder="Nome Completo" required>
-                </div>
-                <div class="input-group">
-                    <i class="far fa-envelope input-icon"></i>
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <i class="fas fa-phone input-icon"></i>
-                    <input type="tel" placeholder="Contato (WhatsApp)" required>
-                </div>
-                <button type="submit" class="secondary-btn">Cadastrar Email</button>
             </form>
         </div>
     </div>
