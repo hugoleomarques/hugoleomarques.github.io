@@ -304,6 +304,14 @@ body {
     color: white;
 }
 
+.thumb-spotify {
+    background: linear-gradient(135deg, #1DB954, #14532d);
+}
+
+.thumb-youtube {
+    background: linear-gradient(135deg, #FF0000, #7f0000);
+}
+
 .project-info h3 {
     font-size: 0.95rem;
     margin-bottom: 0.2rem;
