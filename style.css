@@ -247,6 +247,14 @@ body {
     color: #9146FF;
 }
 
+.spotify:hover {
+    color: #1DB954;
+}
+
+.bilibili:hover {
+    color: #FB7299;
+}
+
 /* Portfolio */
 .portfolio-section {
     margin: 2rem 0;
